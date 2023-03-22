@@ -1,6 +1,7 @@
 <h2>Please search for the item you want!</h2>
 <input [(ngModel)]="name">
 <button (click)= "buttonToSearch()">Search</button>
-<ul>
-    <li *ngFor = "let inventory of inventorys"></li>
+<ul *ngFor = "let inventory of inventorys">
+    <li>{{inventory.id}}</li>
+    <li>{{inventory.name}}</li>
 </ul>
