@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Inventory } from 'src/app/models/inventory';
 import { InventoryService } from 'src/app/service/inventory.service';
 
@@ -11,16 +11,27 @@ import { InventoryService } from 'src/app/service/inventory.service';
 export class AddInventoryComponent implements OnInit {
 
   name: string = "";
-  inventories : Inventory[]= [];
-  
+  id : number = 0;
+  addedItemMessage: string = "";
+  errorMessage: string = "";
+
+//  @Output()
+//  addedItemEvent :EventEmitter<any> = new EventEmitter<any>();
+
   ngOnInit(): void {}
   constructor(private inventoryService :InventoryService ){
 
   }
  
-  addButton(){
-    const inventory = {name: this.name};
-    this.inventoryService.getAllInventory().subscribe();
-    console.log("Testing if it worked")
+  addButton():void{
+    let inventory: Inventory ={id:this.id, name:this.name};
+    if(this.name.trim()!==''){
+    this.inventoryService.getAddInventory(inventory).subscribe(
+      json =>this.addedItemMessage = "added your Item to the Inventory!"
+    );
   }
+  else{
+    this.errorMessage = "You need to enter an item for it to be added to the list";
+  }
+}
 }
