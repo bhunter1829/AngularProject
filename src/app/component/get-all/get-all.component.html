@@ -3,4 +3,5 @@
 <button (click)= "buttonToSearch()">Search</button>
 <ul *ngFor = "let inventory of inventories">
     <li>{{inventory.name}}</li>
+    <!-- <app-add-inventory (addedItemEvent) ="buttonToSearch(event)"></app-add-inventory> -->
 </ul>
