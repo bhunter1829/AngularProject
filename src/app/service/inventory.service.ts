@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {Observable, throwError } from 'rxjs';
 import { Inventory } from '../models/inventory';
 
 @Injectable({
@@ -18,6 +18,7 @@ getAllInventory():Observable<any[]>{
 }
 
 getAddInventory(inventory: Inventory):Observable<Inventory>{
+
   let header: HttpHeaders = new HttpHeaders();
   header.append("accept", "text/json");
   header.append("Access-Control-Allow-Origin", "*");
