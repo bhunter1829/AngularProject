@@ -8,7 +8,7 @@ import { InventoryService } from 'src/app/service/inventory.service';
   styleUrls: ['./get-all.component.css']
 })
 export class GetAllComponent implements OnInit {
-  
+
 name:string = "";
 inventories : Inventory[]= [];
 constructor(private inventoryService: InventoryService ){
@@ -20,7 +20,7 @@ constructor(private inventoryService: InventoryService ){
   }
 
   buttonToSearch():void{
-      
+
       this.inventoryService.getAllInventory().subscribe(json =>this.inventories = json);
   }
 
