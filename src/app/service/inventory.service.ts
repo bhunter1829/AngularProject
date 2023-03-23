@@ -8,9 +8,16 @@ import { Inventory } from '../models/inventory';
 })
 export class InventoryService {
 
-  
+
 getAllInventory():Observable<any[]>{
 
+  let header: HttpHeaders = new HttpHeaders();
+  header.append("accept", "text/json");
+  header.append("Access-Control-Allow-Origin", "*");
+  return this.http.get<any[]>("http://127.0.0.1:9000/inventory",{headers:header});
+}
+
+deleteInventoryById():Observable<any[]>{
   let header: HttpHeaders = new HttpHeaders();
   header.append("accept", "text/json");
   header.append("Access-Control-Allow-Origin", "*");
