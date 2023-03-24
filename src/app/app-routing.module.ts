@@ -7,7 +7,7 @@ import { DeleteComponent}  from './component/delete/delete.component';
 const routes: Routes = [
  {path:"get-all", component: GetAllComponent},
 
- {path:"delete", component: DeleteComponent}
+ {path:"delete", component: DeleteComponent},
 
  {path:"add-inventory", component:AddInventoryComponent }
 
