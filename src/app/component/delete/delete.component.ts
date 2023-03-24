@@ -3,14 +3,15 @@ import {Inventory} from 'src/app/models/inventory';
 import { InventoryService } from 'src/app/service/inventory.service';
 
 @Component({
-  selector: 'app-get-all',
-  templateUrl: './get-all.component.html',
-  styleUrls: ['./get-all.component.css']
+  selector: 'app-delete',
+  templateUrl: './delete.component.html',
+  styleUrls: ['./delete.component.css']
 })
-export class GetAllComponent implements OnInit {
+export class DeleteComponent implements OnInit {
 
 name:string = "";
 inventories : Inventory[]= [];
+id:number = 0;
 constructor(private inventoryService: InventoryService ){
 
 }
@@ -19,12 +20,9 @@ constructor(private inventoryService: InventoryService ){
 
   }
 
-  buttonToSearch():void{
+  buttonToDelete():void{
 
-
-
-
-      this.inventoryService.getAllInventory().subscribe(json =>this.inventories = json);
+      this.inventoryService.deleteInventoryById(this.id).subscribe(json =>this.inventories = json);
   }
 
 }

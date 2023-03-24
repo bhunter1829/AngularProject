@@ -6,7 +6,11 @@ import { GetAllComponent } from './component/get-all/get-all.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
+import { DeleteComponent } from './component/delete/delete.component';
+
 import { AddInventoryComponent } from './component/add-inventory/add-inventory.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { AddInventoryComponent } from './component/add-inventory/add-inventory.c
     GetAllComponent,
 
     NavbarComponent,
+
+     DeleteComponent
+
       AddInventoryComponent
+
 
   ],
   imports: [
