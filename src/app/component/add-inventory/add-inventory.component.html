@@ -1,0 +1,6 @@
+<h2>Please Add Your Very Own Item!</h2>
+<label for="name">Enter your item</label>
+<input [(ngModel)]="name">
+<button (click)="addButton()">Add me!</button>
+<div *ngIf ="addedItemMessage">{{addedItemMessage}}</div>
+<div *ngIf = "errorMessage">{{errorMessage}}</div>
