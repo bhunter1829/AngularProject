@@ -11,6 +11,7 @@ export class DeleteComponent implements OnInit {
 
 name:string = "";
 inventories : Inventory[]= [];
+id:number = 0;
 constructor(private inventoryService: InventoryService ){
 
 }
@@ -21,7 +22,7 @@ constructor(private inventoryService: InventoryService ){
 
   buttonToDelete():void{
 
-      this.inventoryService.deleteInventoryById().subscribe(json =>this.inventories = json);
+      this.inventoryService.deleteInventoryById(this.id).subscribe(json =>this.inventories = json);
   }
 
 }
