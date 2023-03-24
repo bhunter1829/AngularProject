@@ -25,7 +25,7 @@ export class AddInventoryComponent implements OnInit {
  
   addButton():void{
     let inventory: Inventory ={id:this.id, name:this.name};
-    if(this.name.trim()!==''){
+    if(this.name!==''){
     this.inventoryService.getAddInventory(inventory).subscribe(
       json =>this.addedItemMessage = "added your Item to the Inventory!"
     );
