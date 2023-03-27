@@ -21,9 +21,6 @@ constructor(private inventoryService: InventoryService ){
 
   buttonToSearch():void{
 
-
-
-
       this.inventoryService.getAllInventory().subscribe(json =>this.inventories = json);
   }
 
