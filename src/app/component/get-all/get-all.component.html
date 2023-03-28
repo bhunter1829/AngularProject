@@ -1,7 +1,7 @@
 <h2>Please search for the item you want!</h2>
 <!-- <input [(ngModel)]="name"> -->
 <button (click)= "buttonToSearch()">Search</button>
-<ul *ngFor = "let inventory of inventories">
-    <li>{{inventory.name}}</li>
+<ul *ngFor = "let inventory of inventories" class="inventory_list">
+    <li id="inventory_item">{{inventory.name}}</li>
     <!-- <app-add-inventory (addedItemEvent) ="buttonToSearch(event)"></app-add-inventory> -->
 </ul>

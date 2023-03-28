@@ -17,8 +17,8 @@ import { AddInventoryComponent } from './component/add-inventory/add-inventory.c
     AppComponent,
     GetAllComponent,
     NavbarComponent,
-     DeleteComponent,
-      AddInventoryComponent
+    DeleteComponent,
+    AddInventoryComponent
 
 
   ],

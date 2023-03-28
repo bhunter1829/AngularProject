@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+ *{
+    /* background-color: #141414;  */
+    font-family: Arial, sans-serif;
+} 
+
+h2 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    /* color: #fff; */
+    margin: 2rem;
+}
+
+label {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    /* color: #fff; */
+    margin: 2rem;
+}
+
+input {
+    background-color: white;
+}
+
+button{
+    font-size: 1rem;
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+    margin-left: 2rem;
+}
+
+button:hover {
+    color: #fff;    
+}
+
+.inventory_list{
+/* display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px; */
+    list-style-type: none;
+        padding: 0;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+}
+#inventory_item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.2s ease;
+}
+
+
+#inventory_item:hover {
+    background-color: #f9f9f9;
+}
