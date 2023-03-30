@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Inventory} from 'src/app/models/inventory';
 import { InventoryService } from 'src/app/service/inventory.service';
+import { GetAllComponent } from '../get-all/get-all.component';
 
 @Component({
   selector: 'app-delete',
@@ -23,20 +24,31 @@ constructor(private inventoryService: InventoryService ){
   }
 
   buttonToDelete():void{
-    if(this.name!=''){
-      this.inventoryService.deleteInventoryByName(this.name).subscribe(
-        json =>{this.inventories = json;
-        this.errorDeleteMessage = "Success you deleted an item";
+
+if (this.name != '') {
+    // Get all inventories from the service
+    this.inventoryService.getAllInventory().subscribe(
+      (inventories: Inventory[]) => {
+        // Check if the inventory exists in the array
+        const inventoryExists = inventories.some((inventory) => inventory.name === this.name);
+
+        if (inventoryExists) {
+          this.inventoryService.deleteInventoryByName(this.name).subscribe(
+            json => {
+              this.inventories = json;
+              this.errorDeleteMessage = "Success you deleted an item";
+            }
+          );
+        } else {
+          this.errorDeleteMessage = "The item is not in the list. Please check spelling before deleting.";
+        }
       }
-      );
-    }
-    else{
-      this.errorDeleteMessage = "Please check spelling AND/OR if the item is in the list before deleting.";
-    }
+    );
+  } else {
+    this.errorDeleteMessage = "Please enter the name of the item you want to delete.";
   }
 }
-
 // .subscribe((error:HttpErrorResponse)=>
 // {if(error.status==404)
 //   {this.errorDeleteMessage ="item not found";}});
-
+}
