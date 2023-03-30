@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { DeleteComponent } from './component/delete/delete.component';
 
 import { AddInventoryComponent } from './component/add-inventory/add-inventory.component';
+import { StatisticsComponent } from './component/statistics/statistics.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AddInventoryComponent } from './component/add-inventory/add-inventory.c
     GetAllComponent,
     NavbarComponent,
     DeleteComponent,
-    AddInventoryComponent
+    AddInventoryComponent,
+    StatisticsComponent
 
 
   ],
