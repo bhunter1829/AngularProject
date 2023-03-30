@@ -1,6 +1,19 @@
 <h2>Please Add Your Very Own Item!</h2>
 <label for="name">Enter your item</label>
 <input [(ngModel)]="name">
-<button (click)="addButton()">Add me!</button>
+<button (click)="addButton()" [disabled]="!selectDepartment||!name">Add me!</button>
+<div class ="dropdown">
+    <div class = "dropdown-options">
+<select [(ngModel)] ="selectDepartment" id="department">
+    <option value="">Select a Department</option>
+    <option value="Food">Food</option>
+    <option value="Utility">Utility</option>
+    <option value="Personal Care">Personal Care</option>
+    <option value="Pet Care">Pet Care</option>
+</select>
+    </div>
+</div>
 <div *ngIf ="addedItemMessage">{{addedItemMessage}}</div>
 <div *ngIf = "errorMessage">{{errorMessage}}</div>
+
+
