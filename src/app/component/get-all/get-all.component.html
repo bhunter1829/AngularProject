@@ -2,9 +2,9 @@
 <!-- <input [(ngModel)]="name"> -->
 <button (click)= "buttonToSearch()">Search</button>
 <ul *ngFor = "let inventory of inventories" class="inventory_list">
+    
     <li id="inventory_item">Name : {{inventory.name}}
-        <br>Totals : {{inventory.amount}}
-        <br> Department:
+        <br>Totals : {{inventory.amount}}  
     </li>
     <!-- <app-add-inventory (addedItemEvent) ="buttonToSearch(event)"></app-add-inventory> -->
 </ul>
