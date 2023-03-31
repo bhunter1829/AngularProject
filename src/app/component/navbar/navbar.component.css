@@ -8,13 +8,20 @@
 .navbar {
     background: #131313;
     height: 80px;
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
     top: 0;
     z-index: 999;
+}
+
+.inventory-image {
+
+
+
+
 }
 
 .navbar_container{
