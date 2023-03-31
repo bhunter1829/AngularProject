@@ -49,7 +49,7 @@ export class AddInventoryComponent implements OnInit {
     //if(this.name!==''){
 
     this.inventoryService.getAddInventory(inventory).subscribe(
-      json =>this.addedItemMessage = "added your Item to the Inventory!"
+      json =>this.addedItemMessage = "added " + this.name + " item "+" into department "+ selectDepartment+ " to the Inventory!"
     );
   }
 }
