@@ -10,10 +10,14 @@ import { InventoryService } from 'src/app/service/inventory.service';
   styleUrls: ['./add-inventory.component.css']
 })
 export class AddInventoryComponent implements OnInit {
-  amount:number=0;
-  id : number = 0;
+
+
+  departmentFK : number = 0;
   name: string = "";
   selectDepartment: string = "";
+  id : number = 0;
+  amount : number = 0;
+
   addedItemMessage: string = "";
   errorMessage: string = "";
 
@@ -36,11 +40,14 @@ export class AddInventoryComponent implements OnInit {
 
     //optinal chaining (?) to make sure nothing is undefined
     //checking if the sameDepartment exists before we access the id.
-    let departmentid = sameDepartment?.department_id;
+    let departmentFK = sameDepartment?.department_id;
 
     //this is our inventory model we are accessing.
-    let inventory: Inventory ={id:this.id, name:this.name, department_id:departmentid,amount:this.amount};
-    console.log(inventory);
+
+    let inventory: Inventory ={id:this.id, name:this.name,amount:this.amount,departmentFK:departmentFK};
+    //let department = {selectDepartment:this.selectDepartment};
+    //if(this.name!==''){
+
     this.inventoryService.getAddInventory(inventory).subscribe(
       json =>this.addedItemMessage = "added your Item to the Inventory!"
     );
