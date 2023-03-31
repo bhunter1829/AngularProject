@@ -3,5 +3,5 @@ export interface Inventory{
     name:string,
     amount?:number,
     //define as optional. 
-    department_id?:number //fk 
+    departmentFK?:number //fk 
 }

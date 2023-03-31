@@ -9,6 +9,7 @@ import { InventoryService } from 'src/app/service/inventory.service';
 })
 export class GetAllComponent implements OnInit {
 
+departmentFK:number = 0;
 name:string = "";
 inventories : Inventory[]= [];
 constructor(private inventoryService: InventoryService ){
@@ -22,6 +23,7 @@ constructor(private inventoryService: InventoryService ){
   buttonToSearch():void{
 
       this.inventoryService.getAllInventory().subscribe(json =>this.inventories = json);
+
   }
 
 }

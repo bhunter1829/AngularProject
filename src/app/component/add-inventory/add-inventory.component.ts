@@ -11,9 +11,11 @@ import { InventoryService } from 'src/app/service/inventory.service';
 })
 export class AddInventoryComponent implements OnInit {
 
+  departmentFK : number = 0;
   name: string = "";
   selectDepartment: string = "";
   id : number = 0;
+  amount : number = 0;
   addedItemMessage: string = "";
   errorMessage: string = "";
   departments : Department[] = [{department_id:1, department:'Food'},
@@ -40,10 +42,10 @@ export class AddInventoryComponent implements OnInit {
 
     //optinal chaining (?) to make sure nothing is undefined
     //checking if the sameDepartment exists before we access the id.
-    let departmentid = sameDepartment?.department_id;
+    let departmentFK = sameDepartment?.department_id;
 
     //this is our inventory model we are accessing.
-    let inventory: Inventory ={id:this.id, name:this.name,department_id:departmentid};
+    let inventory: Inventory ={id:this.id, name:this.name,amount:this.amount,departmentFK:departmentFK};
     //let department = {selectDepartment:this.selectDepartment};
     //if(this.name!==''){
     this.inventoryService.getAddInventory(inventory).subscribe(

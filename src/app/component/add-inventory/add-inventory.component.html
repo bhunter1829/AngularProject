@@ -2,6 +2,7 @@
 <label for="name">Enter your item</label>
 <input [(ngModel)]="name">
 <button (click)="addButton()" [disabled]="!selectDepartment||!name">Add me!</button>
+<input type="number" max="100" min="0" [(ngModel)]="amount">
 <div class ="dropdown">
     <div class = "dropdown-options">
 <select [(ngModel)] ="selectDepartment" id="department">
