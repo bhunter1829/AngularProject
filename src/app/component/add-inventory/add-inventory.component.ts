@@ -11,30 +11,28 @@ import { InventoryService } from 'src/app/service/inventory.service';
 })
 export class AddInventoryComponent implements OnInit {
 
+
   departmentFK : number = 0;
   name: string = "";
   selectDepartment: string = "";
   id : number = 0;
   amount : number = 0;
+
   addedItemMessage: string = "";
   errorMessage: string = "";
+
   departments : Department[] = [{department_id:1, department:'Food'},
 {department_id:2,department:'Utility'},
 {department_id:3,department:'Personal Care'},
 {department_id:4,department:'Pet Care'}];
 
-//  @Output()
-//  addedItemEvent :EventEmitter<any> = new EventEmitter<any>();
-
   ngOnInit(): void {}
   constructor(private inventoryService :InventoryService ){
-    //this.selectDepartment = "select"
-
   }
  
   addButton():void{
-    let selectDepartment = this.selectDepartment;
 
+    let selectDepartment = this.selectDepartment;
 
     //find method goes in each emelent of the array and returns the first element that matches
     //which would be department
@@ -45,20 +43,16 @@ export class AddInventoryComponent implements OnInit {
     let departmentFK = sameDepartment?.department_id;
 
     //this is our inventory model we are accessing.
+
     let inventory: Inventory ={id:this.id, name:this.name,amount:this.amount,departmentFK:departmentFK};
     //let department = {selectDepartment:this.selectDepartment};
     //if(this.name!==''){
+
     this.inventoryService.getAddInventory(inventory).subscribe(
       json =>this.addedItemMessage = "added your Item to the Inventory!"
     );
-    this.inventoryService.getAddInventory(inventory)
   }
-  //else{
-    //this.errorMessage = "You need to enter an item for it to be added to the list";
- // }
-//}
 }
-
 
 //if(sameDepartment!==undefined){
   //departmentid = sameDepartment.department_id;
