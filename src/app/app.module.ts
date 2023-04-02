@@ -13,6 +13,7 @@ import { AddInventoryComponent } from './component/add-inventory/add-inventory.c
 import { StatisticsComponent } from './component/statistics/statistics.component';
 import { LoginFormComponent } from './component/login-form/login-form.component';
 import { SearchByNameComponent } from './component/search-by-name/search-by-name.component';
+import { RegisterFormComponent } from './component/register-form/register-form.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SearchByNameComponent } from './component/search-by-name/search-by-name
     AddInventoryComponent,
     StatisticsComponent,
     LoginFormComponent,
-    SearchByNameComponent
+    SearchByNameComponent,
+    RegisterFormComponent
 
 
   ],

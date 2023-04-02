@@ -16,7 +16,7 @@ export class LoginFormComponent implements OnInit{
   submit(){
 
 
-    // this.authService.login(this.username, this.password).subscribe(json =>{this.authService.user=json; this.currentUser=json})
+    this.authService.login(this.username, this.password).subscribe(json =>{this.authService.user=json; this.currentUser=json})
 
 
   }
