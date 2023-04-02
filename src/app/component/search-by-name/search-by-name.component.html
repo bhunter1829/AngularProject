@@ -1,0 +1,11 @@
+<input [(ngModel)]="name" placeholder="Search by name">
+<button (click)="searchInventoryByName()">Search By Name</button>
+<ul *ngFor="let inventory of inventories" class="inventory_list">
+    <li id="inventory_item">Name : {{inventory.name}}<br>Totals : {{inventory.amount}}
+        <div *ngIf="inventory.departmentFK === 1">Department: Food</div>
+        <div *ngIf="inventory.departmentFK === 2">Department: Utility</div>
+        <div *ngIf="inventory.departmentFK === 3">Department: Personal Care</div>
+        <div *ngIf="inventory.departmentFK === 4">Department: Pet Care</div>
+    
+    </li>
+</ul>

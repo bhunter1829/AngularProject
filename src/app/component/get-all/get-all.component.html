@@ -1,14 +1,20 @@
 <h2>Please search for the item you want!</h2>
 <!-- <input [(ngModel)]="name"> -->
-<button (click)= "buttonToSearch()">Search</button>
-<ul *ngFor = "let inventory of inventories" class="inventory_list">
 
-    <li id="inventory_item">Name : {{inventory.name}}<br>Totals : {{inventory.amount}}
+<button id="toggle-inventory-list" (click)="toggleInventoryList()">Toggle Inventory List</button>
+<app-search-by-name></app-search-by-name>
+
+<ul *ngIf="showInventoryList" class="inventory_list">
+    <li id="inventory_item" *ngFor="let inventory of inventories">
+        Name : {{inventory.name}}<br>
+        Totals : {{inventory.amount}}
         <div *ngIf="inventory.departmentFK === 1">Department: Food</div>
         <div *ngIf="inventory.departmentFK === 2">Department: Utility</div>
         <div *ngIf="inventory.departmentFK === 3">Department: Personal Care</div>
         <div *ngIf="inventory.departmentFK === 4">Department: Pet Care</div>
     
-    </li>
-    <!-- <app-add-inventory (addedItemEvent) ="buttonToSearch(event)"></app-add-inventory> -->
+</li>
+
 </ul>
+
+

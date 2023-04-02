@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/User';
 import { AuthService } from 'src/app/service/auth.service';
+
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -14,7 +15,9 @@ export class LoginFormComponent implements OnInit{
 
   submit(){
 
-    this.authService.login(this.username, this.password).subscribe(json =>{this.authService.user=json; this.currentUser=json})
+
+    // this.authService.login(this.username, this.password).subscribe(json =>{this.authService.user=json; this.currentUser=json})
+
 
   }
 
