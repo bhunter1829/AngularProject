@@ -12,6 +12,7 @@ import { DeleteComponent } from './component/delete/delete.component';
 import { AddInventoryComponent } from './component/add-inventory/add-inventory.component';
 import { StatisticsComponent } from './component/statistics/statistics.component';
 import { LoginFormComponent } from './component/login-form/login-form.component';
+import { SearchByNameComponent } from './component/search-by-name/search-by-name.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { LoginFormComponent } from './component/login-form/login-form.component'
     DeleteComponent,
     AddInventoryComponent,
     StatisticsComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    SearchByNameComponent
 
 
   ],

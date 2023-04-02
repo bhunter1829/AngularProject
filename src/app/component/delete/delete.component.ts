@@ -40,7 +40,7 @@ if (this.name != '') {
             }
           );
         } else {
-          this.errorDeleteMessage = "The item is not in the list. Please check spelling before deleting.";
+          this.errorDeleteMessage = this.name +" is not in the list. Please check spelling before deleting.";
         }
       }
     );
