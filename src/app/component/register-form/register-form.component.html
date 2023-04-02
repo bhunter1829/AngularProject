@@ -1,0 +1,18 @@
+<div class = "register_username">
+<h2>Please create a username and Password</h2>
+<label for="username">Create a Username</label>
+<input [(ngModel)]="username">
+</div>
+
+<div class = "register_password">
+<label for="password">Create a Password</label>
+<input [(ngModel)]="password">
+</div>
+
+
+<div class = "register_button">
+<button (click)="submit_register()">Create!</button>     
+</div>
+
+<div *ngIf="successMessage">{{successMessage}}</div>
+<div *ngIf="erorrMessage">{{erorrMessage}}</div>

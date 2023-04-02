@@ -18,5 +18,12 @@ export class AuthService {
   
   }
 
+  register(username:string,password:string):Observable<User>{
+    let header : HttpHeaders = new HttpHeaders();
+    header.append("accept", "text/json");
+    header.append("Access-Control-Allow-Origin", "*");
+    return this.http.post<User>("http://127.0.0.1:9000/register", {username:username, password:password},{headers:header})
+  }
+
   constructor(private http : HttpClient) { }
 }
