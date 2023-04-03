@@ -59,6 +59,13 @@ getTotalItems():Observable<number>{
   return this.http.get<number>("http://127.0.0.1:9000/sum",{headers:header});
 }
 
+patchItemAmount(name : string, amount : number):Observable<any[]>{
+  let header: HttpHeaders = new HttpHeaders();
+  header.append("accept", "text/json");
+  header.append("Access-Control-Allow-Origin", "*");
+  return this.http.patch<any[]>(`http://127.0.0.1:9000/inventory/${name}/${amount}` ,{headers:header})
+}
+
 
 
   constructor(private http: HttpClient) { }

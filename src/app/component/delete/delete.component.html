@@ -2,6 +2,7 @@
 <label for="name">Enter the Item you wish to delete in the list</label>
 <input [(ngModel)]="name">
 <button (click)= "buttonToDelete()">Delete</button>
+<app-update-quantity></app-update-quantity>
 <ul *ngFor = "let inventory of inventories">
   <!-- <li>{{inventory.id}}</li> -->
   <li>{{inventory.name}}</li>
