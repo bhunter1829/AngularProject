@@ -1,0 +1,10 @@
+
+<h2>Update Item Amount!</h2>
+<label for="name">Enter the Item you wish to update</label>
+<input [(ngModel)]="name">
+<label for="amount">Enter the amount you wish to change it to</label>
+<input [(ngModel)]="amount">
+<button (click)="buttonToUpdate()">Update</button>
+<div *ngIf="buttonToUpdate">
+    <p>Updated item: {{ this.name}} ({{ this.amount }})</p>
+</div>

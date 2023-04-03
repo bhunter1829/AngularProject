@@ -14,6 +14,7 @@ import { StatisticsComponent } from './component/statistics/statistics.component
 import { LoginFormComponent } from './component/login-form/login-form.component';
 import { SearchByNameComponent } from './component/search-by-name/search-by-name.component';
 import { RegisterFormComponent } from './component/register-form/register-form.component';
+import { UpdateQuantityComponent } from './component/update-quantity/update-quantity.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { RegisterFormComponent } from './component/register-form/register-form.c
     StatisticsComponent,
     LoginFormComponent,
     SearchByNameComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    UpdateQuantityComponent
 
 
   ],
