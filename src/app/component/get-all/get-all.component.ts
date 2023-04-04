@@ -24,7 +24,7 @@ constructor(private inventoryService: InventoryService ){
   }
 
   toggleInventoryList(): void {
-
+    //Boolean setup, if true show getall, set to interact with button event
     this.showInventoryList = !this.showInventoryList;
     this.inventoryService.getAllInventory().subscribe(json =>this.inventories = json);
     
