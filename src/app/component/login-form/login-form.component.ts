@@ -13,11 +13,9 @@ export class LoginFormComponent implements OnInit{
   password : string = "";
   currentUser : User = this.authService.user;
 
+
   submit(){
-
-
     this.authService.login(this.username, this.password).subscribe(json =>{this.authService.user=json; this.currentUser=json})
-
 
   }
 
@@ -29,13 +27,3 @@ export class LoginFormComponent implements OnInit{
 }
 
 
-//user stories 
-
-//register same page on login 
-//connects to the register backend 
-//make it interact with the backend 400 
-
-
-//brenden does this stuffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-//adjustingn inven amount to decrease or increase. 
-// inventory list search input box that searches for a sepecifc name

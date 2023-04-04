@@ -11,7 +11,7 @@ import { GetAllComponent } from '../get-all/get-all.component';
 export class DeleteComponent implements OnInit {
 
 name:string = "";
-inventories : Inventory[]= [];
+
 id:number = 0;
 DeletedItemMessage : string ="";
 errorDeleteMessage : string = "";
@@ -24,19 +24,19 @@ constructor(private inventoryService: InventoryService ){
   }
 
   buttonToDelete():void{
-
+      //Check for empty string
 if (this.name != '') {
-    // Get all inventories from the service
+      // Get all inventories from the service
     this.inventoryService.getAllInventory().subscribe(
       (inventories: Inventory[]) => {
-        // Check if the inventory exists in the array
+      // Check if the inventory exists in the array
         const inventoryExists = inventories.some((inventory) => inventory.name === this.name);
 
         if (inventoryExists) {
           this.inventoryService.deleteInventoryByName(this.name).subscribe(
             json => {
-              this.inventories = json;
-              this.errorDeleteMessage = "Success you deleted an item";
+              inventories = json;
+              this.errorDeleteMessage = "Success you deleted " + this.name;
             }
           );
         } else {
@@ -48,7 +48,4 @@ if (this.name != '') {
     this.errorDeleteMessage = "Please enter the name of the item you want to delete.";
   }
 }
-// .subscribe((error:HttpErrorResponse)=>
-// {if(error.status==404)
-//   {this.errorDeleteMessage ="item not found";}});
 }

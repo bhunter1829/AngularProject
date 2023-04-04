@@ -1,7 +1,6 @@
 <h2>Please search for the item you want!</h2>
-<!-- <input [(ngModel)]="name"> -->
-
 <button id="toggle-inventory-list" (click)="toggleInventoryList()">Toggle Inventory List</button>
+<!-- search component -->
 <app-search-by-name></app-search-by-name>
 
 <ul *ngIf="showInventoryList" class="inventory_list">

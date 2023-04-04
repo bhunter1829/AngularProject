@@ -22,14 +22,16 @@ constructor(private inventoryService: InventoryService ){
     this.inventoryService.getTotalItems().subscribe((sum) => (this.sum = sum));
   }
 
-  buttonCount(){
 
-      this.inventoryService.getUniqueCount().subscribe((count) => (this.count = count));
-  }
+  // Maybe buttons to use instead at some point?
+  // buttonCount(){
 
-    buttonSum(){
+  //   this.inventoryService.getUniqueCount().subscribe((count) => (this.count = count));
+  // }
 
-      this.inventoryService.getTotalItems().subscribe((sum) => (this.sum = sum));
-  }
+  // buttonSum(){
+
+  //   this.inventoryService.getTotalItems().subscribe((sum) => (this.sum = sum));
+  // }
 
 }
