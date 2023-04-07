@@ -54,8 +54,8 @@ getUniqueCount():Observable<number>{
   let header: HttpHeaders = new HttpHeaders();
   header.append("accept", "text/json");
   header.append("Access-Control-Allow-Origin", "*");
-  return this.http.get<number>("http://127.0.0.1:9000/count",{headers:header});
-  // return this.http.get<number>("http://54.204.180.31:9000/count",{headers:header});
+  // return this.http.get<number>("http://127.0.0.1:9000/count",{headers:header});
+  return this.http.get<number>("http://54.204.180.31:9000/count",{headers:header});
 }
 
 getTotalItems():Observable<number>{
